@@ -1,4 +1,4 @@
-int lim = 5;
+int lim = 800;
 //float x, y, z;
 public void setup()
 {
@@ -10,13 +10,15 @@ public void setup()
 }
 public void draw()
 {
+	background(255);
 	//translate(0, 0, z);
-	fractal(10, 800 - 10, 800);
+	fractal(10, 800 - 10, lim);
 	//lim += 5;
 	/*if (lim >= 25)
 	{
 		lim = 12;
 	}*/
+	lim+=30;
 }
 public void mouseDragged()//optional
 {
