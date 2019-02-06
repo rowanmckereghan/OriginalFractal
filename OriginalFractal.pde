@@ -1,4 +1,5 @@
 int lim = 800;
+ArrayList <f> bob = new ArrayList <f>();
 //float x, y, z;
 public void setup()
 {
@@ -6,7 +7,7 @@ public void setup()
 	//x = width/2;
  	//y = height/2;
   	//z = 0;
-	frameRate(60);
+	frameRate(120);
 }
 public void draw()
 {
@@ -26,10 +27,19 @@ public void mouseDragged()//optional
 }
 public void fractal(int x, int y, int len) 
 {
+	//if(x < -800 || x > 800 + len
 	fill(x/5, 65, y/8);
 	//len = len + 5;
-	ellipse(x, y, len, len);
-	if (len < 24) //+ lim)
+	bob.add(new f(x, y, len));
+	/*for (int i = 0; i < bob.size(); i++)
+	{
+		if (bob.get(i).getW() > bob.get(i).getV() + 800)
+		{
+			//System.out.println(bob.remove(i));
+			bob.remove(i);
+		}
+	}*/
+	if (len < 48) //+ lim)
 	{
 		/*for(int i = 0; i < 10000; i++)
 		{
@@ -49,5 +59,25 @@ public void fractal(int x, int y, int len)
 		fractal(x + len/2, y - len/2, len/2);
 		//fractal(x - len/2, y, len/2);
 		//fractal(x - len/2, y + len/2, len/2);
+	}
+}
+
+public class f
+{
+	private int w, z, v;
+	public f(int x, int y, int len)
+	{
+		w = x;
+		z = y;
+		v = len;
+		ellipse(w, z, v, v);
+	}
+	public int getW()
+	{
+		return w;
+	}
+	public int getV()
+	{
+		return v;
 	}
 }
