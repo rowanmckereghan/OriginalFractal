@@ -20,6 +20,11 @@ public void draw()
 		lim = 12;
 	}*/
 	lim+=30;
+	if (lim > 1600)
+	{
+		lim = 820;
+		setup();
+	}
 }
 public void mouseDragged()//optional
 {
