@@ -11,7 +11,7 @@ public void setup()
 }
 public void draw()
 {
-	background(800/5, 65, 800/5);
+	background(800/5, 65, 800/8);
 	//translate(0, 0, z);
 	fractal(10, 800 - 10, lim);
 	//lim += 5;
@@ -33,7 +33,7 @@ public void mouseDragged()//optional
 public void fractal(int x, int y, int len) 
 {
 	//if(x < -800 || x > 800 + len
-	fill(x/5, 65, y/8);
+	fill((int)x/5, 65, (int)y/8);
 	//len = len + 5;
 	bob.add(new f(x, y, len));
 	/*for (int i = 0; i < bob.size(); i++)
@@ -58,12 +58,12 @@ public void fractal(int x, int y, int len)
 	}
 	else
 	{
-		fractal(x, y, len/2);
-		fractal(x + len/2, y, len/2);
-		fractal(x, y - len/2, len/2);
-		fractal(x + len/2, y - len/2, len/2);
-		//fractal(x - len/2, y, len/2);
-		//fractal(x - len/2, y + len/2, len/2);
+		fractal(x, y, (int)(len/2));
+		fractal(x + (int)(len/2), y, (int)(len/2));
+		fractal(x, y - (int)(len/2), (int)(len/2));
+		fractal(x + (int)(len/2), y - (int)(len/2), (int)(len/2));
+		//fractal(x - (int)(len/2)), y, (int)(len/2)));
+		//fractal(x - (int)(len/2)), y + (int)(len/2)), (int)(len/2)));
 	}
 }
 
