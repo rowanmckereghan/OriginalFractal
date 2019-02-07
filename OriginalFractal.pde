@@ -11,7 +11,7 @@ public void setup()
 }
 public void draw()
 {
-	background(255);
+	background(800/5, 65, 800/5);
 	//translate(0, 0, z);
 	fractal(10, 800 - 10, lim);
 	//lim += 5;
