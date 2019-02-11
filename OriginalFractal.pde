@@ -8,6 +8,7 @@ public void setup()
  	//y = height/2;
   	//z = 0;
 	frameRate(120);
+	fractal(10, 800 - 10, lim);
 }
 public void draw()
 {
